@@ -1,6 +1,5 @@
 # MindCare - Landing Page para Bem-Estar Corporativo
 
-![Banner do MindCare](https://i.imgur.com/your-banner-image.png) 
 ## 📑 Sobre o Projeto
 
 **MindCare** é uma landing page moderna e interativa, desenvolvida como parte do projeto **Empreenda Senac**. A página apresenta uma solução de SaaS (Software as a Service) focada em combater o burnout e promover o bem-estar no ambiente corporativo. O design é elegante, responsivo e repleto de micro-interações que criam uma experiência de usuário memorável e engajante.
