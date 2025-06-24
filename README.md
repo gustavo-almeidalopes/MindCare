@@ -78,14 +78,14 @@ Para rodar este projeto localmente, você precisará de um ambiente de servidor 
 
 ## 📂 Estrutura de Arquivos
 
-/
+```
 ├── index.php             \# Arquivo principal da landing page
 ├── newsletter.php        \# Script PHP para o formulário de newsletter
 ├── script.js             \# JavaScript para interatividade e animações
 ├── style.css             \# Estilos CSS personalizados complementares
 ├── tailwind.config.js    \# Configurações customizadas do Tailwind CSS
 └── subscribers.txt       \# Arquivo de texto onde os e-mails são salvos (criado pelo PHP)
-
+```
 ---
 
 ## 🏆 Contexto do Projeto - Empreenda Senac
