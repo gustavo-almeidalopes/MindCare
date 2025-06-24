@@ -1,0 +1,73 @@
+/* --- Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* As cores base são aplicadas via classes do Tailwind no body do index.php */
+}
+
+/* --- EFEITOS ATUALIZADOS --- */
+
+/* --- Nav Link Hover Effect (Atualizado com a nova cor de destaque) --- */
+.nav-link { position: relative; }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--tw-color-accent-cyan); /* Cor de destaque atualizada */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- Custom Cursor (Atualizado com a nova cor de destaque) --- */
+.cursor-dot, .cursor-outline { pointer-events: none; position: fixed; top: 0; left: 0; border-radius: 50%; z-index: 9999; opacity: 0; transform: translate(-50%, -50%); transition: opacity 0.3s, transform 0.1s; }
+@media (pointer: fine) { body { cursor: none; } .cursor-dot, .cursor-outline { opacity: 1; } }
+.cursor-dot { width: 8px; height: 8px; background-color: var(--tw-color-accent-cyan); } /* Cor de destaque atualizada */
+.cursor-outline { width: 40px; height: 40px; border: 2px solid #888; transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.2s cubic-bezier(0.3, 0.7, 0.4, 1); }
+.cursor-outline.hovered { width: 60px; height: 60px; border-color: var(--tw-color-accent-cyan); } /* Cor de destaque atualizada */
+.cursor-outline.clicked { transform: scale(0.9) translate(-50%, -50%); }
+
+/* --- FAQ Accordion (Atualizado com a nova cor de destaque) --- */
+.faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+.faq-item.active .faq-answer { max-height: 200px; /* Ajuste conforme necessário */ }
+.faq-item.active .faq-icon { transform: rotate(45deg); color: var(--tw-color-accent-cyan); } /* Rotação e cor de destaque no ícone */
+
+/* --- Intersection Observer Animations (Initial states) --- */
+/* A lógica de animação permanece, as classes a seguir definem o estado inicial antes do JS atuar */
+#solucao .hero-title > span,
+#solucao p,
+#dashboard-mockup,
+.stat-card,
+#features .feature-card,
+#planos .plan-card,
+#depoimentos .testimonial-card,
+.about-image, .about-text,
+#faq .faq-item {
+    opacity: 0;
+}
+
+/* Transformações iniciais específicas, que são sobrescritas pela animação JS */
+#solucao p { transform: translateY(40px); }
+#dashboard-mockup { transform: translateY(50px); }
+.stat-card { transform: translateY(20px); }
+#features .feature-card, #planos .plan-card, #depoimentos .testimonial-card, #faq .faq-item { transform: translateY(30px); }
+.about-image { transform: translateX(-40px); }
+.about-text { transform: translateX(40px); }
